@@ -13,41 +13,52 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <style>
-    html, body{
-      height: 100%;
-    }
+  <!-- Google -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 
-    body {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: #f5f5f5;
-    }
-
-    .signin {
-      width: 100%;
-      max-width: 330px;
-      padding: 15px;
-      margin: auto;
-    }
-  </style>
 </head>
 
-<body class="text-center">
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 08/08/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+<body>
+  <div>
+    <div>
+      <div>
+        <h1>Bienvenid@</h1>
+        <div>
+        </div>
+        <label for="inputUser">Ingresa tu usuario</label>
+        <input type="user" id="inputUserDOM" placeholder="Usuario" autofocus="" />
+        <br>
+        <label for="inputPassword">Ingresa tu contraseña</label>
+        <input type="password" id="inputPasswordDOM" placeholder="Contraseña" />
+        <br>
+        <button id="buttonDOM">
+          Crear cuenta
+        </button>
+        <div>
+          <div id="g_id_onload" data-client_id="582802223613-hrtjrbm46kh0fb6heagju2sl88t2glqp.apps.googleusercontent.com"
+            data-login_uri="https://fabriciobarrios.github.io/jap_repository/" data-auto_prompt="false">
+          </div>
+          <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with"
+            data-shape="rectangular" data-logo_alignment="left">
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
 </body>
+
 </html>
