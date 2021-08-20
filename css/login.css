@@ -10,9 +10,9 @@ body {
 
 .center{
     position: absolute;
-    top: 45%;
-    left: 45%;
-    transform: (-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 400px;
     background: white;
     border-radius: 19px;
@@ -51,6 +51,7 @@ form .txt_field{
     transform: translateY(-50%);
     font-size: 16px;
     pointer-events: none;
+    transition: .5s;
 }
 
 .txt_field span::before{
@@ -86,4 +87,9 @@ input[type="submit"]{
 input[type="submit"]:hover{
     border-color: #2691d9;
     transition: .5s;
+}
+
+.center p{
+    text-align: center;
+    padding: 0 0 20px 0;
 }
