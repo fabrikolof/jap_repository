@@ -25,41 +25,33 @@
 
 <body>
 
-  <!--Contenedor del form-->
-  <div class="vh-100 d-flex text-center align-items-center">
-    <div class="signin col-6">
-      <div class="form-signin">
-        <h1>Bienvenid@</h1>
-        <div>
+  <div class="center">
+    <h1>Bienvenid@</h1>
+    <form action="index.html">
+      <div class="txt_field">
+        <input type="text" id="inputUserDOM" required>
+        <span></span>
+        <label>Usuario</label>
+      </div>
+      <div class="txt_field">
+        <input type="text" id="inputPasswordDOM" required>
+        <span></span>
+        <label>Contraseña</label>
+      </div>
+      <input type="submit" value="Crear Cuenta" id="buttonDOM">
+      <div>
+        <div id="g_id_onload" data-client_id="582802223613-hrtjrbm46kh0fb6heagju2sl88t2glqp.apps.googleusercontent.com"
+          data-context="signin" data-ux_mode="redirect"
+          data-login_uri="https://fabriciobarrios.github.io/jap_repository" data-nonce="" data-auto_prompt="false">
         </div>
-        <label for="inputUser"></label>
-        <input type="user" id="inputUserDOM" placeholder="Usuario" autofocus="" />
-        <br>
-        <label for="inputPassword"></label>
-        <input type="password" id="inputPasswordDOM" placeholder="Contraseña" />
-        <br>
-        <button id="buttonDOM">
-          Crear cuenta
-        </button>
-        <div>
-          <div id="g_id_onload"
-            data-client_id="582802223613-hrtjrbm46kh0fb6heagju2sl88t2glqp.apps.googleusercontent.com"
-            data-context="signin" data-ux_mode="redirect"
-            data-login_uri="https://fabriciobarrios.github.io/jap_repository" data-nonce=""
-            data-auto_prompt="false">
-          </div>
-
-          <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_blue"
-            data-text="signin_with" data-size="large" data-locale="es-419" data-logo_alignment="left">
-          </div>
-
+        <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_blue" data-text="signin_with"
+          data-size="large" data-locale="es-419" data-logo_alignment="left">
         </div>
       </div>
-    </div>
+    </form>
   </div>
-  <!--Fin del contenedor del form-->
 
-
+  <!--
   <div
     class="col-6 h-100 background font-brand-light d-md-flex d-none d-sm-none align-items-center justify-content-center">
     <div>
@@ -67,16 +59,7 @@
       <h4>tu e-commerce favorito</h4>
     </div>
   </div>
-
-  </div>
-
-
-
-
-
-
-
-
+  -->
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
