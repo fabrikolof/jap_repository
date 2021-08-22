@@ -13,11 +13,15 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <!-- Bootstrap core CSS 2-->
 
 
-  <!-- Google -->
-  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <!-- Google nuevo
+  <script src="https://accounts.google.com/gsi/client" async defer></script>-->
+
+  <!-- google viejo-->
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 
   <!-- CSS local -->
   <link rel="stylesheet" href="css/login.css">
@@ -40,6 +44,7 @@
       </div>
       <input type="submit" value="Crear Cuenta" id="buttonDOM">
       <div>
+        <!-- google nuevo
         <div id="g_id_onload" data-client_id="582802223613-hrtjrbm46kh0fb6heagju2sl88t2glqp.apps.googleusercontent.com"
           data-context="signin" data-ux_mode="redirect"
           data-login_uri="https://fabriciobarrios.github.io/jap_repository" data-nonce="" data-auto_prompt="false">
@@ -47,20 +52,36 @@
         <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_blue" data-text="signin_with"
           data-size="large" data-locale="es-419" data-logo_alignment="left">
         </div>
+        -->
+
+        <!--google viejo-->
+        <div class="gSigninContainer">
+        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+      </div>
+
+
+
         <p>e-MERCADO 2021</p>
       </div>
     </form>
   </div>
 
-  <!--
-  <div
-    class="col-6 h-100 background font-brand-light d-md-flex d-none d-sm-none align-items-center justify-content-center">
-    <div>
-      <h1 class="display-3 ">e-<span class="font-weight-bold">MERCADO</span></h1>
-      <h4>tu e-commerce favorito</h4>
-    </div>
-  </div>
-  -->
+  <script>
+    function onSignIn(googleUser) {
+      // Useful data for your client-side scripts:
+      var profile = googleUser.getBasicProfile();
+      console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+      console.log('Full Name: ' + profile.getName());
+      console.log('Given Name: ' + profile.getGivenName());
+      console.log('Family Name: ' + profile.getFamilyName());
+      console.log("Image URL: " + profile.getImageUrl());
+      console.log("Email: " + profile.getEmail());
+
+      // The ID token you need to pass to your backend:
+      var id_token = googleUser.getAuthResponse().id_token;
+      console.log("ID Token: " + id_token);
+    }
+  </script>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
