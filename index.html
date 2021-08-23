@@ -26,7 +26,8 @@
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       <span>
         <button type="button" onclick="cerrarSesion()">Cerrar sesión</button>
-        <br><a href="#" onclick="signOut()">Sign out</a></span>
+        <br><a href="#" onclick="signOut();">Sign out</a>
+
 
     </div>
   </nav>
@@ -110,6 +111,16 @@
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
+
+  <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+  </script>
+  
 
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
