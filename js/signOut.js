@@ -1,5 +1,3 @@
-onLoad()
-
 function cerrarSesion() {
 
     localStorage.clear();
@@ -11,10 +9,10 @@ function cerrarSesion() {
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-        location.href = "index.html";
+        location.href = "login.html";
     });
     localStorage.clear();
-    window.location = "index.html";
+    window.location = "login.html";
 }
 
 function onLoad() {
