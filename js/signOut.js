@@ -15,11 +15,11 @@ function signOut() {
     window.location = "login.html";
 }
 
+/*
 function onLoad() {
     gapi.load("auth2", function () {
         gapi.auth2.init();
     });
-/*
     let bienvenidaDOM = document.getElementById("bienvenidaDOM");
     let articlesOnCart = document.getElementById("articlesOnCart");
     // let articlesOnCartLocalStorage = JSON.parse(localStorage.cantArt);
@@ -29,5 +29,5 @@ function onLoad() {
     bienvenidaDOM.innerHTML = `<strong>${userName.email}</strong>`;
     avatar.style.backgroundImage = `url('${userName.avatar}')`;
     // articlesOnCart.innerHTML = articlesOnCartLocalStorage;
-    */
 }
+*/
