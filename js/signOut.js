@@ -1,3 +1,4 @@
+onLoad()
 
 function cerrarSesion() {
 
