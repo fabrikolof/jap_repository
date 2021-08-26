@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (e) {
 
     document.getElementById("cerrarSesion").addEventListener("click", function (e) {
+        alert("se activa");
         onLoad();
         signOut();
     });
