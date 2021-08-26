@@ -24,11 +24,7 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <span>
-        <button type="button" onclick="cerrarSesion()">Cerrar sesión</button>
-        <br><a href="#" onclick="signOut();">Sign out</a>
-
-
+      <button type="button" id="cerrarSesion" onclick="signOut(); onLoad();">Cerrar sesión</button>
     </div>
   </nav>
 
@@ -112,15 +108,22 @@
     </div>
   </footer>
 
+
   <script>
+
     function signOut() {
       var auth2 = gapi.auth2.getAuthInstance();
       auth2.signOut().then(function () {
-        console.log('User signed out.');
+        window.location = "index.html";
+      });
+    };
+
+    function onLoad() {
+      gapi.load('auth2', function () {
+        gapi.auth2.init();
       });
     }
   </script>
-
 
 
   <script src="js/jquery-3.4.1.min.js"></script>

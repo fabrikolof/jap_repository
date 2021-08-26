@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         let inputUserDOM = document.getElementById("inputUserDOM");
         let inputPasswordDOM = document.getElementById("inputPasswordDOM");
         let validacion = true;
-        sessionStorage.setItem("gSing", true);
+        
 
 
         if (inputUserDOM.value.trim() === "" && inputPasswordDOM.value.trim() === "") {
