@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function (e) {
 
     document.getElementById("cerrarSesion").addEventListener("click", function (e) {
-        onLoad();
         signOut();
+        onLoad();
     });
 
 });
