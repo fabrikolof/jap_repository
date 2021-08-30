@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", function (e) {
 
+    onLoad();
+
     document.getElementById("cerrarSesion").addEventListener("click", function (e) {
         signOut();
         salir();
-        window.location = "index.html";
+        window.location = "login.html";
     });
 
     
@@ -21,3 +23,8 @@ function signOut() {
     });
 }
 
+function onLoad() {
+    gapi.load('auth2', function () {
+      gapi.auth2.init();
+    });
+  }
