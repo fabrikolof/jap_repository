@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function (e) {
 
     document.getElementById("cerrarSesion").addEventListener("click", function (e) {
-        salir();
         signOut();
+        salir();
+        window.location = "index.html";
     });
 
     
@@ -11,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 function salir(){
     localStorage.clear();
-    window.location = "index.html";
 }
 
 function signOut() {
