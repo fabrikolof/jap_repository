@@ -33,12 +33,69 @@
       <h2>Productos</h2>
       <p class="lead">Verás aquí todos los productos del sitio.</p>
     </div>
+
     <div class="container">
+
+      <!--Fila 1-->
+      <div class="row">
+        <div class="col text-left">
+          <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+            <label class="btn btn-light" id="relevancia">
+              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Más
+              Vendidos.
+            </label>
+            <label class="btn btn-light active" id="precioMin">
+              <input type="radio" name="options" autocomplete="off" checked><i class="fas fa-arrow-down"></i> Precio
+            </label>
+            <label class="btn btn-light" id="precioMax">
+              <input type="radio" name="options" autocomplete="off"><i class="fas fa-arrow-up"></i> Precio
+            </label>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-12 mb-1 container">
+          <div class="row p-0 m-0">
+            <div class="col">
+              <p class="font-weight-normal text-right my-2">Precio</p>
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+            </div>
+            <div class="col col-md-3 p-0">
+              <div class="btn-group" role="group">
+                <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!--Fila 2-->
+      <!-- BOOSTRAP SEARCH INPUT -->
+      <div style="display: inline">
+      <form>
+        <div class="row justify-content-end mb-3">
+          <input class="form-control" id="searcherPro" placeholder="Buscar...">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+        </div>
+      </form>
+    </div>
+    
+
       <div class="row">
         <div class="list-group" id="pro-list-container">
         </div>
       </div>
     </div>
+
   </main>
 
   <footer class="text-muted bg-light">
@@ -66,4 +123,5 @@
   <script src="js/checkUser.js"></script>
   <script src="js/signOut.js"></script>
 </body>
+
 </html>

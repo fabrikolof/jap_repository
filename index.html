@@ -19,6 +19,7 @@
   <meta name="google-signin-client_id"
     content="582802223613-hrtjrbm46kh0fb6heagju2sl88t2glqp.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="js/signOut.js"></script>
 
 </head>
 
@@ -30,7 +31,8 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <button type="button" id="cerrarSesion" onclick="signOut(); onLoad();">Cerrar sesión</button>
+      <a class="py-2 d-none d-md-inline-block" id="desNombreDOM" href="#"></a>
+      <button type="button" id="cerrarSesion" href="#">Cerrar sesión</button>
     </div>
   </nav>
 
@@ -137,7 +139,7 @@
   <script src="js/init.js"></script>
 
   <script src="js/checkUser.js"></script>
-  <script src="js/signOut.js"></script>
+  
 
   <!--Google library-->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
