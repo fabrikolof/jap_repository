@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 "User",
                 JSON.stringify({ usuario: inputUserDOM.value })
             );
-            window.location = "index.html";
+            
         }
 
         

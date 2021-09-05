@@ -41,14 +41,14 @@
         <div class="col text-left">
           <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
             <label class="btn btn-light" id="relevancia">
-              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Más
+              <input type="radio" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Más
               Vendidos.
             </label>
-            <label class="btn btn-light active" id="precioMin">
-              <input type="radio" name="options" autocomplete="off" checked><i class="fas fa-arrow-down"></i> Precio
+            <label class="btn btn-light" id="precioMin">
+              <input type="radio" autocomplete="off" checked><i class="fas fa-arrow-down"></i> Precio
             </label>
             <label class="btn btn-light" id="precioMax">
-              <input type="radio" name="options" autocomplete="off"><i class="fas fa-arrow-up"></i> Precio
+              <input type="radio" autocomplete="off"><i class="fas fa-arrow-up"></i> Precio
             </label>
           </div>
         </div>
@@ -76,15 +76,11 @@
 
       <!--Fila 2-->
       <!-- BOOSTRAP SEARCH INPUT -->
-      <div style="display: inline">
+      <div id="searcherDiv">
       <form>
         <div class="row justify-content-end mb-3">
           <input class="form-control" id="searcherPro" placeholder="Buscar...">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
-            viewBox="0 0 16 16">
-            <path
-              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-          </svg>
+          <i class="fas fa-search" id="lupa" onclick="lupaSearch()"></i>
         </div>
       </form>
     </div>

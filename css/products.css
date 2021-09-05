@@ -2,3 +2,23 @@
     font-size: large;
     
 }
+
+
+#searcherDiv input{
+    width: 95%;
+}
+
+#lupa{
+    font-size: 180%;
+    display:inline;
+    
+}
+#lupa:hover{
+    cursor: pointer;
+    font-size: 200%;
+}
+
+#relevancia, #precioMin, #precioMax:hover{
+    cursor: pointer;
+}
+

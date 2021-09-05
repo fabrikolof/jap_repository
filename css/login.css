@@ -18,6 +18,15 @@ body {
     border-radius: 19px;
 }
 
+.former{
+  text-align: center;
+  position: relative;
+}
+
+.g-signin2{
+    display: inline-block;
+}
+
 .center h1{
     text-align: center;
     padding: 0 0 20px 0;

@@ -86,11 +86,16 @@ function sortAndShowCategories(sortCriteria, categoriesArray) {
     showCategoriesList();
 }
 
+function lupaSearch(){
+    //focus a la barra de busqueda
+    document.getElementById("searcherPro").focus();
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.    
 document.addEventListener("DOMContentLoaded", function (e) {
-    
+
     query = document.getElementById("searcherPro").value.toLowerCase();
 
 
@@ -151,7 +156,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     document.getElementById("searcherPro").addEventListener("input", function (e) {
         query = document.getElementById("searcherPro").value.toLowerCase();
         showCategoriesList();
-      })
-
+    });
+    
+    
 });
 

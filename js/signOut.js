@@ -7,11 +7,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         localStorage.clear();
         window.location = "login.html";
     });
-
-    
-
 });
-
 
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
@@ -25,3 +21,5 @@ function onLoad() {
       gapi.auth2.init();
     });
   }
+
+  
