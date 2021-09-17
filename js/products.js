@@ -1,4 +1,4 @@
-var currentCategoriesArray = [];
+var currentProductInfoArray = [];
 var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
@@ -38,8 +38,8 @@ function sortCategories(criteria, array) {
 function showCategoriesList() {
 
     let htmlContentToAppend = "";
-    for (let i = 0; i < currentCategoriesArray.length; i++) {
-        let category = currentCategoriesArray[i];
+    for (let i = 0; i < currentProductInfoArray.length; i++) {
+        let category = currentProductInfoArray[i];
 
         if (((minCount == undefined) || (minCount != undefined && parseInt(category.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.cost) <= maxCount))) {
@@ -50,7 +50,7 @@ function showCategoriesList() {
 
 
                 htmlContentToAppend += `
-            <a href="category-info.html" class="list-group-item list-group-item-action">
+            <a href="product-info.html" class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
                         <small class="text-muted">` + "Vendidos: " + category.soldCount + `</small>
@@ -77,10 +77,10 @@ function sortAndShowCategories(sortCriteria, categoriesArray) {
     currentSortCriteria = sortCriteria;
 
     if (categoriesArray != undefined) {
-        currentCategoriesArray = categoriesArray;
+        currentProductInfoArray = categoriesArray;
     }
 
-    currentCategoriesArray = sortCategories(currentSortCriteria, currentCategoriesArray);
+    currentProductInfoArray = sortCategories(currentSortCriteria, currentProductInfoArray);
 
     //Muestro las categorías ordenadas
     showCategoriesList();
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
     getJSONData(PRODUCTS_URL).then(function (resultObj) {
         if (resultObj.status === "ok") {
-            currentCategoriesArray = resultObj.data;
+            currentProductInfoArray = resultObj.data;
             showCategoriesList();
         }
     });
@@ -109,6 +109,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
     document.getElementById("clearRangeFilter").addEventListener("click", function () {
         document.getElementById("rangeFilterCountMin").value = "";
         document.getElementById("rangeFilterCountMax").value = "";
+
+        
+        query = "";
+        document.getElementById("searcherPro").value = "";
 
         minCount = undefined;
         maxCount = undefined;
@@ -131,8 +135,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
     document.getElementById("rangeFilterCount").addEventListener("click", function () {
-        //Obtengo el mínimo y máximo de los intervalos para filtrar por cantidad
-        //de productos por categoría.
+        //Obtengo el mínimo y máximo 
         minCount = document.getElementById("rangeFilterCountMin").value;
         maxCount = document.getElementById("rangeFilterCountMax").value;
 
@@ -154,6 +157,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 
     document.getElementById("searcherPro").addEventListener("input", function (e) {
+        //buscador
         query = document.getElementById("searcherPro").value.toLowerCase();
         showCategoriesList();
     });
