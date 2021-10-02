@@ -42,6 +42,10 @@ var getJSONData = function (url) {
     });
 }
 
+function alertaSuertuda(){
+  swal("Vas a tener Suerte!", "Gracias a Fernando que nos enseñó esto!", "success");
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.

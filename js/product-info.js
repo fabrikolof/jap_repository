@@ -1,6 +1,6 @@
-let currentCategoriesArray = [];
+let currentCategoriesArray = {};
 let productArray = [];
-let commentariostArray = [];
+let commentariostArray = {};
 
 function showImagenes(array) {
     let htmlContentToAppend = "";
@@ -39,16 +39,20 @@ function produRelacionados(array){
       let relatedProductsIndex = productArray[valor];
       
       htmlContentToAppend += `
-			<div class="card mr-3" style="width: 18rem;">
-  					<img src="${relatedProductsIndex.imgSrc}" class="card-img-top">
-  				<div class="card-body">
-    				<h5 class="card-title">${relatedProductsIndex.name}</h5>
-    				<p class="card-text">${relatedProductsIndex.description}</p>
-  				</div>
-  				<div class="card-body">
-    				<a href="#" class="card-link">Ver Producto</a>
-  				</div>
-			</div>
+      <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="${relatedProductsIndex.imgSrc}" alt="${relatedProductsIndex.name}">
+      <div class="card-body">
+        <h5 class="card-title">${relatedProductsIndex.name}</h5>
+        <p class="card-text">${relatedProductsIndex.description}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">${relatedProductsIndex.currency} $${relatedProductsIndex.cost} </li>
+        <li class="list-group-item">Vendidos: ${relatedProductsIndex.soldCount}</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Ver Producto</a>
+      </div>
+    </div>
 		`;
 
     }
@@ -106,7 +110,9 @@ function formatDate() {
 
 	if ((date.getMonth() + 1) < 10) {
 		var month = "0" + (date.getMonth() + 1);
-	};
+	} else {
+        var month = (date.getMonth() + 1);
+    };
 	if (date.getDate() < 32) {
 		var day = "" + date.getDate();
 	};

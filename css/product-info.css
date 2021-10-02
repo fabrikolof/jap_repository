@@ -6,7 +6,7 @@
     color: rgb(94, 89, 89);
 }
 
-/* PUNTAJE */
+/* Puntuación */
 input[name="scores"] {
     display: none;
 }

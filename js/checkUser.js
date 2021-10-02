@@ -17,8 +17,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
       </svg>`;
         let desNombreDOM = document.getElementById("desNombreDOM");
         let userName = JSON.parse(localStorage.User);
-        desNombreDOM.innerHTML = `${emogiFeliz} Hola <strong>${userName.usuario}!</strong>`;
-        
+        desNombreDOM.innerHTML = `${emogiFeliz} <strong>${userName.usuario}!</strong>`;
     }
 });
 

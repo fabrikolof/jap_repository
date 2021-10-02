@@ -3,7 +3,7 @@
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
     buttonDOM.addEventListener("click", (e) => {
-
+        
         let inputUserDOM = document.getElementById("inputUserDOM");
         let inputPasswordDOM = document.getElementById("inputPasswordDOM");
         let validacion = true;
