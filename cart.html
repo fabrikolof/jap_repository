@@ -12,34 +12,19 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
-    <!-- google viejo-->
-    <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id"
-      content="582802223613-hrtjrbm46kh0fb6heagju2sl88t2glqp.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <!-- google viejo-->
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id"
+    content="582802223613-hrtjrbm46kh0fb6heagju2sl88t2glqp.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 
   <!--Sweetalert-->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
+  <link href="css/cart.css" rel="stylesheet">
 </head>
 
 <body>
@@ -49,7 +34,7 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      
+
 
       <!-- Example single danger button -->
       <div class="btn-group">
@@ -67,14 +52,124 @@
     </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <!--Carrito-->
+
+  <div class="card">
+    <div class="row">
+
+      <div class="col-md-8 cart">
+        <div class="title">
+          <div class="row">
+            <div class="col">
+              <h4><b>Carrito</b></h4>
+            </div>
+            <div class="col align-self-center text-right text-muted" id="cartCountDOM">3 items</div>
+          </div>
+        </div>
+        <!--productos-->
+        <div id="productos"></div>
+        <div class="back-to-shop"><a href="index.html">&leftarrow;</a><span class="text-muted">Volver a la tienda</span>
+        </div>
+      </div>
+
+      <div class="col-md-4 summary">
+        <div>
+          <h5><b>Resumen</b></h5>
+        </div>
+        <hr>
+
+        <div class="row">
+          <div class="col" style="padding-left:0;" id="cartCountDOM2"></div>
+          <div class="col text-right" id="subTotalDOM">132</div>
+        </div>
+
+        <form>
+          <p>Tipo de Envío</p> <select onchange="costoEnvio()" id="selectorEnvio">
+            <option value="1" class="text-muted">Premium 2 a 5 días (15%)</option>
+            <option value="2" class="text-muted">Express 5 a 8 días (7%)</option>
+            <option value="3" class="text-muted">Standar 12 a 15 días (5%)</option>
+          </select>
+          <p>Pon tu Código de descuento</p> <input id="code" placeholder="Escribe tu código aquí!">
+
+          <!--Tipo moneda-->
+          <div class="col" style="padding-left:50;">
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <span>Moneda</span>
+              <div class="custom-control custom-radio">
+                <input id="pesoCurrency" name="currencyType" type="radio" class="custom-control-input color" checked=""
+                  required="">
+                <label class="custom-control-label" for="pesoCurrency">UYU</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input id="dollarCurrency" name="currencyType" type="radio" class="custom-control-input" required="">
+                <label class="custom-control-label" for="dollarCurrency">USD</label>
+              </div>
+            </li>
+          </ul>
+        </div>
+        </form>
+
+
+
+        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+          <div class="col">TOTAL</div>
+          <div class="col text-right" id="totalCostDOM"></div>
+        </div> <button class="btn2" data-toggle="modal" data-target="#modal1">Comprar</button>
+      </div>
     </div>
   </div>
+
+ <!--Envio mobal-->
+  <div class="modal" tabindex="-1" role="dialog" id="modal1">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title">Envío a tu casita</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <p>Dirección de envío.</p>
+
+          <div class="row">
+          <div class="col-8">
+          <p>Calle</p>
+          <input id="calle" type="text" placeholder="Nombre de calle...">
+        </div>
+
+        <div class="col-4">
+          <p>Número</p>
+          <input id="numero" type="text" placeholder="Número de calle...">
+        </div>
+
+        <div class="col-6">
+          <p>Esquina</p>
+          <input id="esquina" type="text" placeholder="Esquina...">
+        </div>
+
+        <div class="col-6">
+          <p>País</p>
+          <input id="pais" type="text" placeholder="País...">
+        </div>
+
+      </div>
+    </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Finalizar compra</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -83,6 +178,7 @@
       <div></div>
     </div>
   </div>
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>

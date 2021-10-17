@@ -89,6 +89,41 @@
                 </div>
             </div>
         </div>
+
+        <div>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">Sub-Total</h6>
+                <small class="text-muted">Costo sin envío</small>
+              </div>
+              <span class="text-muted" id="subTotalDOM">-</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="my-0">P0rcentaje</h6>
+                <small class="text-muted">Según el tipo de envío</small>
+              </div>
+              <span class="text-muted" id="shippingPercentageDOM">-</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+              <span>Moneda</span>
+              <div class="custom-control custom-radio">
+                <input id="pesoCurrency" name="currencyType" type="radio" class="custom-control-input color" checked="" required="">
+                <label class="custom-control-label" for="pesoCurrency">UYU</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input id="dollarCurrency" name="currencyType" type="radio" class="custom-control-input" required="">
+                <label class="custom-control-label" for="dollarCurrency">USD</label>
+              </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between rounded-bottom">
+              <span>Total</span>
+              <strong id="totalCostDOM">-</strong>
+            </li>
+          </ul>
+        </div>
+
     </main>
     <footer class="text-muted bg-light">
       <div class="container">
