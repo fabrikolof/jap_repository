@@ -74,7 +74,6 @@ function updateValues() {
 	let countDOM = document.getElementsByTagName("Input");
 	let subtotal = 0;
 	let precio = 0;
-	
 	let cantidadValueInput = 0;
 
 	for (let i = 0; i < precioDOM.length; i++){
