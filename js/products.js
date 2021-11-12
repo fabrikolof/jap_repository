@@ -53,7 +53,6 @@ function showCategoriesList() {
 
         <div class="col-md-4 col-lg-3">
             <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
-            
                 <img src="${category.imgSrc}" class="card-img-top" alt="${category.description}">
                 <div class="card-body">
                     <h3 class="mb-3">${category.name}</h3>

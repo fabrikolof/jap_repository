@@ -58,7 +58,6 @@ function guardarPerfil() {
   const response = await fetch('./img/avatars/avatars.JSON');
   avatars = await response.json();
   console.log(avatars);
-  console.log('hola');
 }
 
 
@@ -75,7 +74,12 @@ function mostrarPerfil() {
     mostrarEdad.innerHTML = perfil.edad;
     mostrarEmail.innerHTML = perfil.email;
     mostrarTel.innerHTML = perfil.telefono;
-    mostrarImg.src = perfil.imagen;
+    if (perfil.imagen != ""){
+      mostrarImg.src = perfil.imagen;
+    } else {
+      mostrarImg.src = "img/car1.jpg";
+    }
+    
 }
 
 

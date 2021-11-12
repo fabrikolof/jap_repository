@@ -90,7 +90,7 @@
             <option value="2" class="text-muted">Express 5 a 8 días (7%)</option>
             <option value="3" class="text-muted" >Standar 12 a 15 días (5%)</option>
           </select>
-          <p>Pon tu Código de descuento</p> <input id="code" placeholder="Escribe tu código aquí!">
+          <p>Pon tu Código de descuento</p> <input id="code" placeholder="¿Vas a tener suerte?">
 
           <!--Tipo moneda-->
           <div class="col" style="padding-left:50;">
@@ -112,16 +112,20 @@
         </form>
 
 
-
+        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+          <div class="col">Costo envio</div>
+          <div class="col text-right" id="envioCostDOM"></div>
+        </div> 
         <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
           <div class="col">TOTAL</div>
           <div class="col text-right" id="totalCostDOM"></div>
-        </div> <button class="btn2" data-toggle="modal" data-target="#modal1">Comprar</button>
+        </div> 
+        <button class="btn2" data-toggle="modal" data-target="#modal1">Comprar</button>
       </div>
     </div>
   </div>
 
- <!--Envio mobal-->
+ <!--Envio modal-->
   <div class="modal" tabindex="-1" role="dialog" id="modal1">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -136,8 +140,8 @@
         <div class="modal-body">
           <p>Dirección de envío.</p>
 
-          <div class="row">
-          <div class="col-8">
+      <div class="row">
+        <div class="col-8">
           <p>Calle</p>
           <input id="calle" type="text" placeholder="Nombre de calle...">
         </div>
@@ -157,11 +161,64 @@
           <input id="pais" type="text" placeholder="País...">
         </div>
 
+        <!--Forma de pago-->
+        <div>
+          <hr>
+          <p>Seleccionar Forma de Pago</p>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" data-toggle="collapse" href="#tarjetaCredito" role="button">
+            <label class="custom-control-label" for="customRadio1">Tarjeta de Credito</label>
+          </div>
+
+          <div class="collapse" id="tarjetaCredito">
+            <div class="row mt-3">
+              <div class="col-6">
+                <label for="productName">Número de Tarjeta</label>
+                <input type="number" class="form-control" id="productName1" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Ingrese un número de tarjeta
+                </div>
+              </div>
+              <div class="col-6">
+                <label for="productName">Código de Seguridad</label>
+                <input type="number" class="form-control" id="productName2" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Ingresa un número de seguridad
+                </div>
+              </div>
+              <div class="col-6 mt-3">
+                <label for="productName">Vencimiento (MM/AA)</label>
+                <input type="number" class="form-control" id="productName3" placeholder="" value="" required minlength="4">
+                <div class="invalid-feedback">
+                  Ingrese un vencimiento correcto
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="custom-control custom-radio mt-3">
+            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" data-toggle="collapse" href="#transferenciaBancaria" role="button">
+            <label class="custom-control-label" for="customRadio2">Transferencia Bancaria</label>
+          </div>
+
+          <div class="collapse" id="transferenciaBancaria">
+            <div class="row mt-3">
+              <div class="col-6">
+                <label for="productName">Número de Cuenta</label>
+                <input type="number" class="form-control" id="productName" placeholder="" value="">
+                <div class="invalid-feedback">
+                  Ingrese un número de cuenta
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+
+
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Finalizar compra</button>
+          <button type="button" class="btn btn-primary" onclick="comprar()">Finalizar compra</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
 

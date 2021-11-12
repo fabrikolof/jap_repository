@@ -42,7 +42,7 @@ function mostrarCarrito(array) {
 				</div>
 				<div class="col-2 d-flex align-items-center justify-content-center">
 					<div class="w-75 d-flex justify-content-center align-items-center">
-              			<input type="number" class="form-control" id="articleCount-${index}"value="${producto.count}" min="0" onchange="updateValues();">
+              			<input type="number" class="form-control" id="articleCount-${index}" value="${producto.count}" min="0" onchange="updateValues();">
 					</div>
 				</div>
 				<div class="col-2 d-flex align-items-center justify-content-center">
@@ -96,6 +96,7 @@ function updateValues() {
 	document.getElementById("cartCountDOM").innerHTML = `${cantidadValueInput} items`;
 	document.getElementById("cartCountDOM2").innerHTML = `ITEMS ${cantidadValueInput}`;
 	document.getElementById("totalCostDOM").innerHTML = `${MONEY_SYMBOL} ${Math.round(subtotal * shippingPercentage)}`;   
+	document.getElementById("envioCostDOM").innerHTML = `${MONEY_SYMBOL} ${Math.round((subtotal * shippingPercentage) - subtotal)}`;   
 
 }
 
@@ -116,6 +117,34 @@ function costoEnvio () {
 		shippingPorcentageValue = 5;
 		updateValues();
 	}
+
+}
+
+function comprar() {
+	let calle = document.getElementById("calle").value;
+	let numero = document.getElementById("numero").value;
+	let esquina = document.getElementById("esquina").value;
+	let pais = document.getElementById("pais").value;
+
+	let numTarjet = document.getElementById("productName1").value;
+	let codSeguridad = document.getElementById("productName2").value;
+	let fecha = document.getElementById("productName3").value;
+
+	let numCuenta = document.getElementById("productName").value;
+
+	let cantidadItems = parseFloat(document.getElementById("cartCountDOM").textContent);
+	
+	if (cantidadItems != 0 && numTarjet != 0 && codSeguridad &&	fecha && calle != "" && numero != "" && esquina != "" && pais != "" ||
+		cantidadItems != 0 && numCuenta != 0 && calle != "" && numero != "" && esquina != "" && pais != "") {
+		swal("Compra realizada con éxito", "A disfrutar!", "success", {
+			button: "Volver al carrito",
+		  });
+	}else{
+		swal("No puede realizar la compra", "Hay campos vacios!", "error", {
+			button: "Volver al carrito",
+		  });
+	}
+
 
 }
 
@@ -148,5 +177,5 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	 	updateValues();
 	});
 
-	
+
 });
