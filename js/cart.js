@@ -28,7 +28,7 @@ function mostrarCarrito(array) {
 		<ul class="list-group-item list-group-item-action">
 			<div class="row d-flex justify-content-around">
 				<div class="col-2 d-flex align-items-center justify-content-center">
-					<img src="${producto.src}" class="img-thumbnail">
+					<img src="${producto.src}" class="img-thumbnail animate__animated animate__rubberBand">
 				</div>
 				<div class="col-2 d-flex align-items-center justify-content-start">
 					<div class="d-flex align-items-center">
@@ -47,7 +47,7 @@ function mostrarCarrito(array) {
 				</div>
 				<div class="col-2 d-flex align-items-center justify-content-center">
 					<div class="d-flex justify-content-center align-items-center">
-              			<span onclick="deleteArticle(${index});">❌</span>
+              			<span onclick="deleteArticle(${index});" class="animate__animated animate__rubberBand">❌</span>
 					</div>
 				</div>
 			</div>
@@ -134,7 +134,7 @@ function comprar() {
 
 	let cantidadItems = parseFloat(document.getElementById("cartCountDOM").textContent);
 	
-	if (cantidadItems != 0 && numTarjet != 0 && codSeguridad &&	fecha && calle != "" && numero != "" && esquina != "" && pais != "" ||
+	if (cantidadItems != 0 && numTarjet != 0 && codSeguridad &&	fecha != "" && calle != "" && numero != "" && esquina != "" && pais != "" ||
 		cantidadItems != 0 && numCuenta != 0 && calle != "" && numero != "" && esquina != "" && pais != "") {
 		swal("Compra realizada con éxito", "A disfrutar!", "success", {
 			button: "Volver al carrito",
@@ -147,6 +147,8 @@ function comprar() {
 
 
 }
+
+
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -177,5 +179,17 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	 	updateValues();
 	});
 
-
+	
+	 document.getElementById("customRadio1").addEventListener("click",()=>{
+	 	document.getElementById("productName").disabled = true;
+		 document.getElementById("productName3").disabled = false;
+		 document.getElementById("productName2").disabled = false;
+		 document.getElementById("productName1").disabled = false;
+	});
+	document.getElementById("customRadio2").addEventListener("click",()=>{
+		document.getElementById("productName").disabled = false;
+		document.getElementById("productName3").disabled = true;
+		document.getElementById("productName2").disabled = true;
+		document.getElementById("productName1").disabled = true;
+   });
 });

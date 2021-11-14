@@ -21,10 +21,15 @@
   <!--Sweetalert-->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+  <!--https://animate.style/-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
   <link href="css/cart.css" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -138,29 +143,31 @@
         </div>
 
         <div class="modal-body">
+<form class="was-validated">
           <p>Dirección de envío.</p>
 
+  
       <div class="row">
         <div class="col-8">
           <p>Calle</p>
-          <input id="calle" type="text" placeholder="Nombre de calle...">
+          <input id="calle" type="text" placeholder="Nombre de calle..." class="form-control" required>
         </div>
 
         <div class="col-4">
           <p>Número</p>
-          <input id="numero" type="text" placeholder="Número de calle...">
+          <input id="numero" type="text" placeholder="Número de calle..." class="form-control" required>
         </div>
 
         <div class="col-6">
           <p>Esquina</p>
-          <input id="esquina" type="text" placeholder="Esquina...">
+          <input id="esquina" type="text" placeholder="Esquina..." class="form-control" required>
         </div>
 
         <div class="col-6">
           <p>País</p>
-          <input id="pais" type="text" placeholder="País...">
+          <input id="pais" type="text" placeholder="País..." class="form-control" required> 
         </div>
-
+  
         <!--Forma de pago-->
         <div>
           <hr>
@@ -188,7 +195,7 @@
               </div>
               <div class="col-6 mt-3">
                 <label for="productName">Vencimiento (MM/AA)</label>
-                <input type="number" class="form-control" id="productName3" placeholder="" value="" required minlength="4">
+                <input type="date" class="form-control" id="productName3" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Ingrese un vencimiento correcto
                 </div>
@@ -205,7 +212,7 @@
             <div class="row mt-3">
               <div class="col-6">
                 <label for="productName">Número de Cuenta</label>
-                <input type="number" class="form-control" id="productName" placeholder="" value="">
+                <input type="number" class="form-control" id="productName" placeholder="" value="" required>
                 <div class="invalid-feedback">
                   Ingrese un número de cuenta
                 </div>
@@ -214,6 +221,7 @@
           </div>
         </div>
       </div>
+</form>
 
 
 
