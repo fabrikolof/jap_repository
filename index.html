@@ -3,6 +3,9 @@
 <html lang="en">
 
 <head>
+
+
+
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -14,30 +17,83 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 
+  <!-- font awesome-->
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+
   <!-- google viejo-->
   <meta name="google-signin-scope" content="profile email">
   <meta name="google-signin-client_id"
     content="582802223613-hrtjrbm46kh0fb6heagju2sl88t2glqp.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   
-
+  <!--https://animate.style/-->
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
 
   <!--Sweetalert-->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+
+  <!--https://leafletjs.com/examples/quick-start/-->
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+
+  <style>
+  
+  #mapid { height: 180px; }
+  
+  </style>
+
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
+
+      <!-- Top Navigation Menu -->
+  <div class="topnav" id="myTopnav">
+    
+    <div class="topnav" id="myTopnav">
+      <a href="index.html">Inicio</a>
+      <a href="categories.html">Categorías</a>
+      <a href="products.html">Productos</a>
+      <a href="sell.html">Vender</a>
+      <a class="float-right" href=# data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false" id="desNombreDOM">
+    </a>
+
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="cart.html">Carrito</a>
+      <a class="dropdown-item" href="my-profile.html">Perfil</a>
+      <a class="dropdown-item" href="#" onclick="alertaSuertuda()">Voy a tener suerte</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#" onclick="cerrarSesione()">Cerrar sesión</a>
+    </div>
+
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+
+    </div>
+
+    
+
+
+
+
+
+
+    <!--
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       
-
-      <!-- Example single danger button -->
+      Example single danger button 
       <div class="btn-group">
         <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false" id="desNombreDOM">
@@ -51,7 +107,11 @@
         </div>
       </div>
     </div>
-  </nav>
+  -->
+
+  
+</nav>
+
 
   <main role="main">
     <section class="jumbotron text-center">
@@ -124,7 +184,18 @@
     </div>
   </main>
   <footer class="text-muted">
+    <!--https://leafletjs.com/examples/quick-start/-->
     <div class="container">
+      <h6>Nos encontramos aquí! <i id="caritaFelizMap" class="far fa-smile"></i></h6>
+      
+    <div id="mapid"></div>
+  </div>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    
+
+
+    <div class="container">
+      
       <p class="float-right">
         <a href="#">Volver arriba</a>
       </p>
@@ -135,9 +206,11 @@
 
 
 
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/index.js"></script>
 
   <script src="js/checkUser.js"></script>
   <script src="js/signOut.js"></script>
