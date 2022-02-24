@@ -123,8 +123,40 @@ function myFunction() {
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
+  
 });
 
+//BREADCRUMB
 
+//El estado por defecto del breadcrumb es desactivado false
+if(sessionStorage.getItem("estado") === null){
+  sessionStorage.setItem("estado", false);
+}
 
+//Aplica las clases dependiendo del estado y cambia su estado
+document.getElementById("breadContainer").addEventListener("click", () => {
+  let estado = sessionStorage.getItem("estado");
 
+  if(estado === "false"){
+    sessionStorage.setItem("estado", true);
+    migasDePan();
+  } else {
+    sessionStorage.setItem("estado", false);
+    migasDePan();
+  }
+});
+
+function migasDePan(){
+  let icono = document.getElementById("breadcrumbIcon");
+  let estado = sessionStorage.getItem("estado");
+  let breadPath = document.getElementById("breadPath");
+  if(estado === "false"){
+    icono.setAttribute('class', "fas fa-bread-slice miga_off");
+    breadPath.style.display ="none";
+  } else {
+    icono.setAttribute('class', "fas fa-bread-slice miga_on");
+    breadPath.style.display = "block";
+  }
+}
+
+migasDePan();

@@ -141,7 +141,7 @@ a.custom-card:hover {
 }
 
 /* 
-  Burger
+   -----------------------------------------   Burger   --------------------------------------
 */
 
 .topnav {
@@ -209,4 +209,70 @@ ul.breadcrumb li {
 }
 
 
-/* Breadcrumbs */
+/* 
+  --------------------------------- Burger Nueva -------------------------------
+*/
+
+.logo__animate{
+	-webkit-transition:-webkit-transform 1s,opacity 1s,background 1s,width 1s,height 1s,font-size 1s;
+	-webkit-border-radius:7px;
+	-o-transition-property:width,height,-o-transform,background,font-size,opacity;
+	-o-transition-duration:1s,1s,1s,1s,1s,1s;
+	-moz-transition-property:width,height,-o-transform,background,font-size,opacity;
+	-moz-transition-duration:1s,1s,1s,1s,1s,1s;
+	transition-property:width,height,transform,background,font-size,opacity;
+	transition-duration:1s,1s,1s,1s,1s,1s;
+	opacity:0.4;
+}
+.logo__animate:hover{
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	transform: rotate(360deg);
+	opacity:1;
+  background-color: rgb(255, 255, 255);
+}
+
+.buttonburger{
+  color: rgb(255, 255, 255);
+  padding: 8px 8px;
+  transition: all .2s ease-out;
+}
+
+.buttonburger:hover{
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+
+.dropdown-menu {
+  right: 0;
+  left: unset;
+}
+
+
+/* BREADCRUMB */
+
+#breadContainer{
+  border: none;
+  background: none;
+}
+
+.miga_on {
+  color:white;
+  transition: 1s;
+}
+
+.miga_on:hover {
+  color:grey;
+  transition: 1s;
+}
+
+.miga_off {
+  color: grey;
+  transition: 1s;
+}
+
+.miga_off:hover {
+  color:white;
+  transition: 1s;
+}

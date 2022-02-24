@@ -13,6 +13,7 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -39,21 +40,18 @@
 
   <!--https://leafletjs.com/examples/quick-start/-->
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js" defer></script>
+  <style>#mapid { height: 180px; }</style>
 
-  <style>
-  
-  #mapid { height: 180px; }
-  
-  </style>
 
   <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
 
-      <!-- Top Navigation Menu -->
+<!-- <nav class="site-header sticky-top py-1 bg-dark">
+      
   <div class="topnav" id="myTopnav">
     
     <div class="topnav" id="myTopnav">
@@ -72,45 +70,72 @@
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="#" onclick="cerrarSesione()">Cerrar sesión</a>
     </div>
-
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
-
     </div>
+</nav> -->
 
+<!--Nueva navbar-->
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
     
+    <a class="navbar-brand logo__animate" href="index.html">
+      <img src="https://jovenesaprogramar.edu.uy/storage/app/media/logo-jap-2020.svg" width="45" height="30" alt="">
+    </a>
+    
+    <!--BREADCRUMB-->
+    <button id="breadContainer">
+      <i class="fas fa-bread-slice miga_off" id="breadcrumbIcon"></i>
+    </button>
+
+
+    <button class="navbar-toggler border-0 buttonburger" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars"></i>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="navbar-nav my-2 my-lg-0 navbar-nav-scroll flex-grow-1 text-center">
+        <li class="nav-item nav__links active">
+          <a class="nav-link" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="products.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sell.html">Vender</a>
+        </li>
 
 
 
-
-
-
-    <!--
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      
-      Example single danger button 
-      <div class="btn-group">
-        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false" id="desNombreDOM">
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="cart.html">Carrito</a>
-          <a class="dropdown-item" href="my-profile.html">Perfil</a>
-          <a class="dropdown-item" href="#" onclick="alertaSuertuda()">Voy a tener suerte</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" onclick="cerrarSesione()">Cerrar sesión</a>
-        </div>
+        <li class="nav-item dropdown ml-sm-auto active">
+          <a id="desNombreDOM" class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+          
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="cart.html">Carrito</a></li>
+            <li><a class="dropdown-item" href="my-profile.html">Perfil</a></li>
+            <li><a class="dropdown-item" href="#" onclick="alertaSuertuda()">Voy a tener suerte</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#" onclick="cerrarSesione()">Cerrar sesión</a></li>
+          </ul>
+        </li>
       </div>
     </div>
-  -->
+  </nav>
 
-  
-</nav>
+<!--BREADCRUMB-->
+<div class="container-fluid" id="breadPath" style="display: none;">
+  <br>
+  <div class="col-md-5">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Inicio</li>
+    </ol>
+  </div> 
+</div>
 
 
   <main role="main">
@@ -189,8 +214,10 @@
       <h6>Nos encontramos aquí! <i id="caritaFelizMap" class="far fa-smile"></i></h6>
       
     <div id="mapid"></div>
+
   </div>
-    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  <!-- <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script> -->
+    
     
 
 
@@ -199,7 +226,7 @@
       <p class="float-right">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2021</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
@@ -210,7 +237,7 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
-  <script src="js/index.js"></script>
+  <script src="js/index.js" defer></script>
 
   <script src="js/checkUser.js"></script>
   <script src="js/signOut.js"></script>
