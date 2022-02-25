@@ -255,6 +255,7 @@ ul.breadcrumb li {
 #breadContainer{
   border: none;
   background: none;
+  margin-left: auto;
 }
 
 .miga_on {
